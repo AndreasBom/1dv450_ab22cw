@@ -1,0 +1,11 @@
+Routes:
+
+resources :team do
+  resources :playsers, only: [:index, :show]
+end
+
+resources :playsers, only [:players#create]
+
+
+get '/login' => 'session#new'
+post 'login' => 'session#create'

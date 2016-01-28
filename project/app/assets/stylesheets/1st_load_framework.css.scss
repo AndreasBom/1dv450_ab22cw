@@ -45,17 +45,46 @@ section {
   margin-top: 20px;
   }
 
+  @mixin box_sizing {
+    -moz-box-sizing:    border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing:         border-box;
+  }
 
+
+.gravatar{
+  float: left !important;
+
+}
+
+.name_field{
+  margin: 30px;
+  position: relative;
+}
+
+.bottom{
+  display: inline-block;
+  margin-top: 40px;
+  margin-left: 10px;
+}
+
+input, textarea, select, .uneditable-input {
+  width: 100%;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+.btn-register{
+  margin-top: 15px;
+}
 
 
 //debugging box
 $gray-medium-light: #eaeaea;
 
-@mixin box_sizing {
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
-}
 
 .debug_dump {
   clear: both;

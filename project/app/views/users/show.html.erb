@@ -1,6 +1,12 @@
-<p id="notice"><%= notice %></p>
 
-<%  %>
+<div class="name_and_avatar">
+  <%= gravatar_for @user %>
+  <div class="name_field">
+    <h1 class="bottom">
+      <%= @user.first_name %> <%= @user.last_name %>
+    </h1>
+    <%= link_to 'Edit', edit_user_path(@user) %> 
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
