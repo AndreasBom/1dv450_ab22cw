@@ -47,3 +47,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #email validator
 gem 'email_validator', require: 'email_validator/strict'
+
+#front end layout generator
+#https://github.com/RailsApps/rails_layout
+group :development do
+  gem 'rails_layout'
+end
+
+gem 'bootstrap-sass'
