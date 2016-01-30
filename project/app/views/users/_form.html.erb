@@ -1,6 +1,11 @@
 
 
 
+<div class="gravatar_edit">
+  <%= gravatar_for @user%>
+  <p>Ändra avatar på <%= link_to "Gravatar.com", 'https://gravatar.com', target: "_blank"%></p>
+</div>
+
     <%= form_for(@user) do |f| %>
       <% if @user.errors.any? %>
         <div id="error_explanation">
@@ -15,20 +20,22 @@
       <% end %>
 
       <div class="actions">
+
+
         <%= f.label :first_name, "Förnamn" %>
-        <%= f.text_field :first_name %>
+        <%= f.text_field :first_name, class: 'form-control' %>
 
         <%= f.label :last_name, "Efternamn" %>
-        <%= f.text_field :last_name %>
+        <%= f.text_field :last_name, class: 'form-control' %>
 
         <%= f.label :email %>
-        <%= f.email_field :email %>
+        <%= f.email_field :email, class: 'form-control' %>
 
         <%= f.label :password, "Lösenord" %>
-        <%= f.password_field :password %>
+        <%= f.password_field :password, class: 'form-control' %>
 
         <%= f.label :password_confirmation, "Bekräfta lösenord" %>
-        <%= f.password_field :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
 
         <%= f.submit "Registrera", class:"btn btn-register btn-default "%>
       </div>

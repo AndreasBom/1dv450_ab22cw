@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160123125436) do
+ActiveRecord::Schema.define(version: 20160129222428) do
 
   create_table "apis", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "key",        null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "key",         null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "application"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -34,11 +35,11 @@ ActiveRecord::Schema.define(version: 20160123125436) do
   add_index "roles_users", ["role_id", "user_id"], name: "index_roles_users_on_role_id_and_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "first_name",      limit: 50, null: false
+    t.string   "last_name",       limit: 50, null: false
+    t.string   "email",                      null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "password_digest"
   end
 

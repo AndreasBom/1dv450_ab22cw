@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<div class="text-center border">
+<h2>Vill du radera api-nyckeln?</h2>
+<h4>Api-nyckeln för applicationen <strong><%= @api.application %></strong> kommer att raderas.</h4>
+<p class="alert-danger" style="width: auto">Denna åtgärden går inte att ångra</p>
+<div>
+  <%= link_to "Avbryt", user_path(current_user), class: "btn btn-sm btn-link"%>
+  <%= link_to "Radera", user_api_path(current_user.id, @api.id), class: "btn btn-sm btn-link", confirm: "Vill du radera api-nyckeln?", method: :delete %>
+</div>
+
+</div>

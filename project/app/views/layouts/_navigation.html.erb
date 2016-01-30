@@ -8,14 +8,55 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to 'Home', root_path, class: 'navbar-brand' %>
-      <%= link_to 'Användare', users_path, class: 'navbar-brand' %>
-      <%= link_to 'Registrera', new_user_path, class: 'navbar-brand' %>
-    </div>
+      <%= link_to 'Hem', root_path, class: 'navbar-brand' %>
+      <% if !logged_in? %>
+          <%= link_to 'Registrera', new_user_path, class: 'navbar-brand' %>
+          <%= link_to 'Logga in', login_path, class: 'navbar-brand' %>
+      <% else %>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Konto <b class="caret"></b>
+              </a>
+
+              <ul class="dropdown-menu">
+                <li>
+                  <%= link_to "Dina Api", current_user %>
+                </li>
+                <li>
+                  <%= link_to "Inställningar", edit_user_path(current_user) %>
+                </li>
+
+                  <%
+                    if is_admin?(current_user)
+                  %>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "Visa användare", users_path %>
+                  </li>
+                  <% end %>
+
+                <li class="divider"></li>
+                <li>
+                  <%= link_to "Logga ut", logout_path, method: "delete" %>
+                </li>
+              </ul>
+            </li>
+          </ul>
+      <% end %>
+      <% if !current_user.nil? && is_admin?(current_user) %>
+          </div>
+          <ul class="nav navbar-nav navbar-right navbar-brand sm-txt">
+            <li>Du är inloggad som admin</li>
+          </ul>
+      <% end %>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <%= render 'layouts/navigation_links' %>
       </ul>
     </div>
   </div>
+
 </nav>
+

@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, only: [:show, :edit, :update, :destroy, :index]
+  before_action :require_admin, only: [:index]
 
   # GET /users
   # GET /users.json
@@ -11,6 +13,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @api = @user.apis
   end
 
   # GET /users/new
@@ -27,14 +30,17 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    respond_to do |format|
+    #respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'Användaren har skapats!' }
+        redirect_to @user
+=begin
+        format.html { }
         format.json { render :show, status: :created, location: @user }
+=end
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+      #end
     end
   end
 
@@ -72,4 +78,6 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
     end
+
+
 end

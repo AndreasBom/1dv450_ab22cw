@@ -5,8 +5,28 @@
     <h1 class="bottom">
       <%= @user.first_name %> <%= @user.last_name %>
     </h1>
-    <%= link_to 'Edit', edit_user_path(@user) %> 
   </div>
 </div>
+<hr/>
+<div id="api_section" class="">
+  <h4>Registrerade applikationer</h4>
 
-<%= link_to 'Back', users_path %>
+  <% if current_user.email == @user.email %>
+    <%= link_to "Lägg till", new_user_api_path(current_user), class: "btn btn-xs btn-default" %>
+  <% end %>
+
+  <table class="table table-striped">
+    <tr>
+      <th>App</th>
+      <th>Nyckel</th>
+      <th></th>
+        <% @api.each do |a| %>
+          <tr>
+            <td><%= a.application %></td>
+            <td><%= a.key %></td>
+            <td> <%= link_to "Ta bort", user_api_path(@user.id, a.id)%> </td>
+        <% end %>
+    </tr>
+  </table>
+</div>
+

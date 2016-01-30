@@ -1,0 +1,24 @@
+<%= form_for(@api) do |f| %>
+    <% if @api.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@api.errors.count, "error") %> prohibited this api from being saved:</h2>
+
+          <ul>
+            <% @api.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="actions">
+
+      <%= f.label :application, "Namn på App" %>
+      <%= f.text_field :application, class: 'form-control' %>
+
+      <%= f.label :key, "Api-nyckel" %>
+      <%= f.text_field :key, class: 'form-control', readonly: true, value: @key %>
+
+      <%= f.submit "Lägg till", class: "btn btn-register btn-default"%>
+    </div>
+<% end %>

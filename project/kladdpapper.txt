@@ -9,3 +9,8 @@ resources :playsers, only [:players#create]
 
 get '/login' => 'session#new'
 post 'login' => 'session#create'
+
+
+Frågor/problem
+
+När man har registrerat sig blir man inte inloggad, utan hamnar på inloggningssidan

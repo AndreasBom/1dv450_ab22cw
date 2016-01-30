@@ -1,29 +1,39 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Users</h1>
 
-<table>
+<h1>Alla användare</h1>
+
+<table class="table table-striped">
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Användare</th>
+      <th>Antal Api</th>
+      <th>Admin</th>
     </tr>
   </thead>
 
   <tbody>
     <% @users.each do |user| %>
-    <h2>
-    <%= user.first_name + user.last_name%>
+    <tr>
+      <td>
+        <%= user.first_name + user.last_name%>
+      </td>
+      <td>
+        <%= user.apis.count %>
+      </td>
+      <td> <%= if is_admin?(user) then
+                 'Ja'
+               else 'Nej'
+               end %></td>
+      <td><%= link_to 'Visa användare', user %></td>
+      <td><%= link_to 'Radera användare', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
-  </h2>
-      <tr>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    </tr>
+
+
+
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New User', new_user_path %>

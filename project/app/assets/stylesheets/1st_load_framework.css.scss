@@ -12,6 +12,10 @@ img {
   font-size: inherit;
   }
 
+.nav{
+  font-size: 18px;
+}
+
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
 // to make views framework-neutral
@@ -70,7 +74,7 @@ section {
 
 input, textarea, select, .uneditable-input {
   width: 100%;
-  @include box_sizing;
+  //@include box_sizing;
 }
 
 input {
@@ -81,7 +85,33 @@ input {
   margin-top: 15px;
 }
 
+#api_section{
+  width: 60%;
+  margin: auto;
+}
 
+.border{
+  width:60%;
+  margin: 100px auto;
+  padding: 20px;
+  border:1px solid gray;
+  border-radius: 5px;
+}
+
+.sm-txt{
+  font-size: 12px !important;
+  padding-top: 35px !important;
+}
+
+.gravatar_edit{
+  position: absolute;
+  left: -220px;
+  top:20px;
+  border: 1px solid #DCE4EC;
+  padding:10px;
+  border-radius: 5px;
+
+}
 //debugging box
 $gray-medium-light: #eaeaea;
 
