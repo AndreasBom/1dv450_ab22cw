@@ -41,10 +41,7 @@ class ApisController < ApplicationController
   # DELETE /apis/1.json
   def destroy
     @api.destroy
-    respond_to do |format|
-      format.html { redirect_to user_path(current_user), notice: 'Nyckeln har raderats' }
-      format.json { head :no_content }
-    end
+    redirect_to user_path(current_user), notice: 'Nyckeln har raderats'
   end
 
   private

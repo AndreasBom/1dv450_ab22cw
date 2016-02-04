@@ -1,11 +1,11 @@
 
 
-
+<% if logged_in? %>
 <div class="gravatar_edit">
   <%= gravatar_for @user%>
   <p>Ändra avatar på <%= link_to "Gravatar.com", 'https://gravatar.com', target: "_blank"%></p>
 </div>
-
+<% end %>
     <%= form_for(@user) do |f| %>
       <% if @user.errors.any? %>
         <div id="error_explanation">
