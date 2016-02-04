@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160129222428) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "apis", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "key",         null: false
@@ -32,7 +35,7 @@ ActiveRecord::Schema.define(version: 20160129222428) do
     t.integer "user_id"
   end
 
-  add_index "roles_users", ["role_id", "user_id"], name: "index_roles_users_on_role_id_and_user_id"
+  add_index "roles_users", ["role_id", "user_id"], name: "index_roles_users_on_role_id_and_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name",      limit: 50, null: false
