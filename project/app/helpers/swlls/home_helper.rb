@@ -1,0 +1,2 @@
+module Swlls::HomeHelper
+end

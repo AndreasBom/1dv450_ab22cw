@@ -1,9 +1,10 @@
 class SessionsController < ApplicationController
+  layout "regLayout"
   #GET
   #Show login form
   def new
     if !current_user.nil? then
-      redirect_to user_path(current_user)
+      redirect_to user_path(current_user  )
     end
   end
 

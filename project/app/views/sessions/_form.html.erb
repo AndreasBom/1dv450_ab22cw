@@ -1,5 +1,5 @@
 
-  <%= form_for(:session, url: login_path) do |f| %>
+  <%= form_for(:session, url: developer_login_path) do |f| %>
 
     <%= f.label :email %>
     <%= f.email_field :email, class: 'form-control' %>
@@ -10,4 +10,4 @@
     <%= f.submit "Logga in", class: "btn btn-register btn-default" %>
   <% end %>
 
-  <p>Ny användare? <%= link_to "Gå till Registrera", register_path %></p>
+  <p>Ny användare? <%= link_to "Gå till Registrera", developer_register_path %></p>

@@ -18,14 +18,14 @@ module SessionsHelper
 
   def require_login
     if !logged_in?
-      redirect_to :login
+      redirect_to developer_login_path
     end
   end
 
   def require_admin
     if !is_admin?(current_user) then
       flash[:danger] = "Åtgärden kräver administrationsbehörighet. Logga in som administratör"
-      redirect_to :login
+      redirect_to developer_login_path
     end
   end
 

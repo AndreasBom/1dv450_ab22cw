@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  layout "regLayout"
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :require_login, only: [:show, :edit, :update, :destroy, :index]
   before_action :require_admin, only: [:index]
@@ -12,7 +13,12 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(params[:id])
+    if is_admin?(current_user)
+      @user = User.find(params[:id])
+    else
+      @user = User.find(session[:user_id])
+    end
+
     @api = @user.apis
   end
 

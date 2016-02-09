@@ -1,4 +1,5 @@
 class ApisController < ApplicationController
+  layout "regLayout"
   before_action :set_api, only: [:show, :edit, :update, :destroy]
 
 

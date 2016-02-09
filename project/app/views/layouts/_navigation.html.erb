@@ -11,7 +11,7 @@
       <%= link_to 'Hem', root_path, class: 'navbar-brand' %>
       <% if !logged_in? %>
           <%= link_to 'Registrera', new_user_path, class: 'navbar-brand' %>
-          <%= link_to 'Logga in', login_path, class: 'navbar-brand' %>
+          <%= link_to 'Logga in', developer_login_path, class: 'navbar-brand' %>
       <% else %>
 
           <ul class="nav navbar-nav navbar-right">
@@ -39,7 +39,7 @@
 
                 <li class="divider"></li>
                 <li>
-                  <%= link_to "Logga ut", logout_path, method: "delete" %>
+                  <%= link_to "Logga ut", developer_logout_path, method: "delete" %>
                 </li>
               </ul>
             </li>
