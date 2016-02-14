@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160129222428) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20160214155139) do
 
   create_table "apis", force: :cascade do |t|
     t.integer  "user_id"
@@ -22,6 +19,38 @@ ActiveRecord::Schema.define(version: 20160129222428) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "application"
+  end
+
+  create_table "creators", force: :cascade do |t|
+    t.string   "creatorname"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.text     "message"
+    t.integer  "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+  end
+
+  create_table "events_tags", id: false, force: :cascade do |t|
+    t.integer "event_id", null: false
+    t.integer "tag_id",   null: false
+  end
+
+  add_index "events_tags", ["event_id", "tag_id"], name: "index_events_tags_on_event_id_and_tag_id"
+  add_index "events_tags", ["tag_id", "event_id"], name: "index_events_tags_on_tag_id_and_event_id"
+
+  create_table "positions", force: :cascade do |t|
+    t.float    "longitude"
+    t.float    "latitude"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "roles", force: :cascade do |t|
@@ -35,7 +64,13 @@ ActiveRecord::Schema.define(version: 20160129222428) do
     t.integer "user_id"
   end
 
-  add_index "roles_users", ["role_id", "user_id"], name: "index_roles_users_on_role_id_and_user_id", using: :btree
+  add_index "roles_users", ["role_id", "user_id"], name: "index_roles_users_on_role_id_and_user_id"
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name",      limit: 50, null: false

@@ -16,6 +16,7 @@ module SessionsHelper
     !current_user.nil?
   end
 
+
   def require_login
     if !logged_in?
       redirect_to developer_login_path
