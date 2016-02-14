@@ -1,0 +1,38 @@
+
+
+<% if creator_logged_in? %>
+    <div class="gravatar_edit">
+      <%= gravatar_for @creator%>
+      <p>Ändra avatar på <%= link_to "Gravatar.com", 'https://gravatar.com', target: "_blank"%></p>
+    </div>
+<% end %>
+<%= form_for(@creator) do |f| %>
+    <% if @creator.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= @creator.errors.count %> fel inträffade:</h2>
+
+          <ul>
+            <% @creator.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="actions">
+
+      <%= f.label :creatorname, "användarnamn" %>
+      <%= f.text_field :creatorname, class: 'form-control' %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password, "Lösenord" %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.label :password_confirmation, "Bekräfta lösenord" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+      <%= f.submit "Registrera", class:"btn btn-register btn-default "%>
+    </div>
+<% end %>

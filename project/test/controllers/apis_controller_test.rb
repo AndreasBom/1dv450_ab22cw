@@ -16,15 +16,15 @@ class ApisControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create api" do
+  test "should create apiservice" do
     assert_difference('Api.count') do
-      post :create, api: {  }
+      post :create, apiservice: {  }
     end
 
-    assert_redirected_to api_path(assigns(:api))
+    assert_redirected_to api_path(assigns(:apiservice))
   end
 
-  test "should show api" do
+  test "should show apiservice" do
     get :show, id: @api
     assert_response :success
   end
@@ -34,12 +34,12 @@ class ApisControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should update api" do
-    patch :update, id: @api, api: {  }
-    assert_redirected_to api_path(assigns(:api))
+  test "should update apiservice" do
+    patch :update, id: @api, apiservice: {  }
+    assert_redirected_to api_path(assigns(:apiservice))
   end
 
-  test "should destroy api" do
+  test "should destroy apiservice" do
     assert_difference('Api.count', -1) do
       delete :destroy, id: @api
     end

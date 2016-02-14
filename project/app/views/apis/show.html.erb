@@ -6,7 +6,7 @@
 <p class="alert-danger" style="width: auto">Denna åtgärden går inte att ångra</p>
 <div>
   <%= link_to "Avbryt", user_path(current_user), class: "btn btn-sm btn-link"%>
-  <%= link_to "Radera", user_api_path(current_user.id, @api.id), class: "btn btn-sm btn-link", confirm: "Vill du radera api-nyckeln?", method: :delete %>
+  <%= link_to "Radera", user_api_path(current_user.id, @api.id), class: "btn btn-sm btn-link", confirm: "Vill du radera apiservice-nyckeln?", method: :delete %>
 </div>
 
 </div>
