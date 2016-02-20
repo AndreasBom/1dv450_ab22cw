@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
 
+  before_action :access_control
+
   #GET show/all will show all events
   def index
     events = Event.all
@@ -46,7 +48,13 @@ class EventsController < ApplicationController
     end
   end
 
-  def addtag
+  #DELETE delete a specified event
+  def destroy
+    event = Event.find(params[:id])
+
+    if event.destroy
+      render :nothing, status: :ok
+    end
 
   end
 

@@ -5,4 +5,15 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
 
+  # Requests needs to have custom header 'X-Api-Key' with a valid api key
+  def access_control
+    api_key = request.headers['X-Api-Key']
+    access_ok = Api.find_by key: api_key
+
+    unless access_ok
+      head status: :unauthorized
+      false
+    end
+  end
+
 end

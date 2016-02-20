@@ -1,5 +1,7 @@
 class TagController < ApplicationController
 
+  before_action :access_control
+
   #GET show all tags
   def index
     @tags = Tag.all

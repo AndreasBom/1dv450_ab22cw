@@ -1,6 +1,6 @@
 class CreatorsController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  before_action :access_control
 
 
   def index
