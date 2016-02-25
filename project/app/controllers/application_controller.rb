@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :four_o_four
 
 
-
   def authenticate
     authenticate_or_request_with_http_basic do |username, password|
       @creator_name = username
@@ -18,12 +17,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-=begin
-  def authorize(item_to_delete)
-
-    item_to_delete
-  end
-=end
 
 
   # Requests needs to have custom header 'X-Api-Key' with a valid api key
@@ -35,6 +28,22 @@ class ApplicationController < ActionController::Base
       head status: :forbidden
       false
     end
+  end
+
+  # DEFAULT
+  OFFSET = 0
+  LIMIT = 25
+
+  # offset and limit response
+  def limit_response
+    if params[:offset].present?
+      @offset = params[:offset].to_i
+    end
+    if params[:limit].present?
+      @limit = params[:limit].to_i
+    end
+    @offset ||= OFFSET
+    @limit  ||= LIMIT
   end
 
   private

@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   protect_from_forgery with: :null_session
   before_filter :authenticate, only: [:create, :destroy]
   before_action :access_control
-
+  before_filter :limit_response
 
 
 
@@ -11,16 +11,46 @@ class EventsController < ApplicationController
   def index
     #if show/all?tag=tagName
     if !params[:tag].nil?
-      response = Event
+      events = Event
              .joins(events_tags:  :tag)
              .where(tags: {name: params[:tag]})
 
+      events = events.drop(@offset)
+      events = events.take(@limit)
+
+      response = {offset: @offset,
+                  limit: @limit,
+                  count: events.count,
+                  data: events}
+
       render json: response, include: [:tags, :creator, :position], status: :ok
 
+      #if show/all?search=searchQuery
+      #search in name or message of the events
+    elsif !params[:search].nil?
+
+      events = Event.where(
+          "message LIKE ?
+            OR name LIKE ?",
+          "%#{params[:search]}%", "%#{params[:search]}%")
+      response = {query: params[:search],
+                  count: events.count,
+                  data: events}
+      render json: response, include: [:tags, :creator, :position], status: :ok
+
+    # show all events
     else
       events = Event.order("updated_at DESC").all
       if !events.nil?
-        render json: events, include: [:tags, :creator, :position], status: :ok
+
+        events = events.drop(@offset)
+        events = events.take(@limit)
+
+        response = {offset: @offset,
+                    limit: @limit,
+                    count: events.count,
+                    data: events}
+        render json: response, include: [:tags, :creator, :position], status: :ok
       else
         render json: events.errors, status: :ok
       end
