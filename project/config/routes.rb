@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
 
-  namespace :api do
-    namespace :v1 do
+
+
+  scope :api do
+    scope :v1 do
+      get 'app/index' => 'app_index#index'
+
       get 'positions/show/all' => 'positions#index'
       get 'positions/show/:id' => 'positions#show'
+      get 'positions/show/:id/nearby' => 'positions#nearby'
       post 'positions/create' => 'positions#create'
 
       post 'tags/create' => 'tag#create'
@@ -13,6 +18,7 @@ Rails.application.routes.draw do
       get 'events/show/all' => 'events#index'
       get 'events/show/:id' => 'events#show'
       post 'events/create' => 'events#create'
+      delete 'events/delete/:id' => 'events#destroy'
 
       get 'creators' => 'creators#index'
       get 'creators/show/:id' => 'creators#show'

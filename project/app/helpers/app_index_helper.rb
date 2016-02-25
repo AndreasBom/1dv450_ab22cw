@@ -1,0 +1,2 @@
+module AppIndexHelper
+end

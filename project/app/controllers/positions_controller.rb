@@ -1,11 +1,14 @@
 class PositionsController < ApplicationController
+  protect_from_forgery with: :null_session
   before_action :access_control
 
+  #GET show/all
   def index
     positions = Position.all
     render json: positions, status: :ok
   end
 
+  #GET show/:id
   def show
     position = Position.find(params[:id])
 
@@ -14,10 +17,18 @@ class PositionsController < ApplicationController
     else
       render json: position.errors, status: :not_found
     end
-
   end
 
-  #POST create new position
+  #GET show/:id/nearby
+  def nearby
+    this_position = Position.find(params[:id])
+    neighboring = this_position.nearbys(10)
+
+    render json: neighboring, status: :ok
+  end
+
+  #POST positions/create
+  # Create new position
   def create
     position = Position.new(position_params)
 
@@ -28,6 +39,8 @@ class PositionsController < ApplicationController
     end
 
   end
+
+
 
 
   private

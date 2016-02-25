@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160214155139) do
+ActiveRecord::Schema.define(version: 20160225101044) do
 
   create_table "apis", force: :cascade do |t|
     t.integer  "user_id"
@@ -32,10 +32,15 @@ ActiveRecord::Schema.define(version: 20160214155139) do
   create_table "events", force: :cascade do |t|
     t.text     "message"
     t.integer  "rating"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "name"
+    t.integer  "position_id"
+    t.integer  "creator_id"
   end
+
+  add_index "events", ["creator_id"], name: "index_events_on_creator_id"
+  add_index "events", ["position_id"], name: "index_events_on_position_id"
 
   create_table "events_tags", id: false, force: :cascade do |t|
     t.integer "event_id", null: false

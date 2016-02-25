@@ -1,5 +1,5 @@
 class TagController < ApplicationController
-
+  protect_from_forgery with: :null_session
   before_action :access_control
 
   #GET show all tags
