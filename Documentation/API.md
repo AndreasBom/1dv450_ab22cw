@@ -29,7 +29,8 @@ En förfrågan kan innehålla ett json-objekt som skickas med i HTTP body. Vissa
     
     
 ##Länkar till samtliga REST anrop    
-#####Headern (X-Api-Key :  aaaaaa).
+#####Headern X-Api-Key :  aaaaaa   
+    
 GET `localhost:3000/api/v1/app/index`    
     
     
@@ -37,7 +38,7 @@ GET `localhost:3000/api/v1/app/index`
 POST `localhost:3000/api/v1/creators/create`    
     
 ######Headers:    
-(X-Api-Key :  aaaaaa)    
+X-Api-Key :  aaaaaa    
     
 ######Body   
 `{    
@@ -46,6 +47,46 @@ POST `localhost:3000/api/v1/creators/create`
     "password_confirmation": "123456",     
     "email": "email@email.com"    
 }`    
+    
 
+##Visa en resursägare    
+GET `localhost:3000/api/v1/creators/show/1`    
+    
+######Headers:    
+X-Api-Key :  aaaaaa     
+    
+    
+##Skapa ett event    
+POST `localhost:3000/api/v1/events/create`    
+     
+######Headers:    
+X-Api-Key   :   aaaaaa     
+User    :    User1      
+Password    :    123456    
+`{
+    
+"message": "This is the message",
+"name": "New Messate",
+"rating": 2,
+"tags":[
+    {
+        "name": "NewTag"
+    },
+    {
+        "name": "NewTag1"
+    },
+    {
+        "name": "NewTag2"
+    }
+    ],
+"position": [
+    {
+        "latitude": 12,
+        "longitude": 32,
+        "name": "Position ONE"
+    }
+    ]
+
+}`      
  
 
