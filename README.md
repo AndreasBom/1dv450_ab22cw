@@ -41,12 +41,16 @@ Kör i kommandotolken:
 #####Installation
 * Ladda ner repot (exempelvis med git clone https://github.com/AndreasBom/1dv450_ab22cw.git)    
 * Använd en kommandotolk som har ssh ex. git bash, Cygwin etc.
-* I kommandotolken, använd cd 'katalognamn' för att komma till katalogen /project
-* kör följande kommandon för att installera en vagrantmaskin, (kör ett kommando i taget)):
+I kommandotolken, skriv:   
+* cd 1dv450   
+* cd project    
+    
+kör följande kommandon för att installera en vagrantmaskin, (kör ett kommando i taget)):
 * vagrant up
 * vagrant ssh 
 * cd /vagrant
-* cd project    
+* cd project   
+   
 Nu bör du vara inne i katalogen där appen ligger.    
 Skriv:    
 * bundle install    
