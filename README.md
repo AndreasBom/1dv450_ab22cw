@@ -1,5 +1,9 @@
 # 1dv450_ab22cw
+Beskrivningen för uppgift 1 och 2.  
+
 Repo till kursen Webbramverk    
+
+###Uppgift 1
 Jag har utvecklat och testat på Ubuntu som körts i VirtualBox. Jag har inte fått det att fungera på Windows 10. Om du inte får det att funka lokalt går det att köra på cloud9.
 
 
@@ -32,6 +36,29 @@ Kör i kommandotolken:
      För att köra igång servern skrivs:
      rails s -p $PORT -b $IP
      
+     
+###Uppgift 2   
+#####Installation
+* Ladda ner repot
+* Använd en kommandotolk som har ssh ex. git bash, Cygwin etc.
+* I kommandotolken, använd cd 'katalognamn' för att komma till katalogen /project
+* kör följande kommandon för att installera en vagrantmaskin, (kör ett kommando i taget)):
+* vagrant up
+* vagrant ssh 
+* cd /vagrant
+* cd project    
+Nu bör du vara inne i katalogen där appen ligger.    
+Skriv:    
+* bundle install    
+* rake db:setup
+   
+Kör igång servern genom att skriva:    
+* rails s -b 0.0.0.0     
+    
+Dokumentation hittas i katalogen Dokummentation
+
+
+
 
 
      
