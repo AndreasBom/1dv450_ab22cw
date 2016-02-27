@@ -10,7 +10,7 @@ app/controllers
   
 ## Bas-Url    
 För att nå api'et används en basurl. Denna nås genom:    
-  http://localhost:3000/api/v1
+  `http://localhost:3000/api/v1`
 
 ## API nyckel
 Vid varje anrop måste en API-nyckel skickas med. För att få en API-nyckel krävs det att man registrerar sin applikation. Detta kan göras här http://localhost:3000/   
