@@ -45,7 +45,7 @@ I kommandotolken, skriv:
 * cd 1dv450   
 * cd project    
     
-kör följande kommandon för att installera en vagrantmaskin, (kör ett kommando i taget. Om det inte funkar kans du testa att först köra kommandot | vagrant provision |)):
+kör följande kommandon för att installera en vagrantmaskin, (kör ett kommando i taget. Om det inte funkar kan du testa att först köra kommandot | vagrant provision |)):
 * vagrant up
 * vagrant ssh 
 * cd /vagrant
