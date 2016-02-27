@@ -36,15 +36,15 @@ GET `localhost:3000/api/v1/app/index`
 ##Skapa en resursägare (creator)   
 POST `localhost:3000/api/v1/creators/create`    
     
-#####Headers:    
+######Headers:    
 (X-Api-Key :  aaaaaa)    
     
-#####Body   
-`{
-    "creatorname": "User1", 
-    "password": "123456", 
-    "password_confirmation": "123456", 
-    "email": "email@email.com"
+######Body   
+`{    
+    "creatorname": "User1",    
+    "password": "123456",    
+    "password_confirmation": "123456",     
+    "email": "email@email.com"    
 }`    
 
  
