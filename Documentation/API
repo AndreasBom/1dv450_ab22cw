@@ -1,0 +1,9 @@
+###Följande controllers används för API'et   
+app/controllers    
+  * application_ controller.rb
+  * creators_controller.rb    
+  * events_controller.rb    
+  * positions_controller.rb    
+  * tag_controller.rb
+  
+  
