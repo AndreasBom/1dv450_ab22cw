@@ -90,10 +90,29 @@ X-Api-Key   :   aaaaaa
 ##Radera ett event    
 DELETE `localhost:3000/api/v1/events/1/delete`    
      
+##Visa alla event    
+GET `localhost:3000/api/v1/events/show/all`    
+    
+######Headers:    
+X-Api-Key   :   aaaaaa    
+     
+     
+##Sök efter ett specifikt event    
+Sök efter ett event genom eventets 'namn' eller 'message'. I följande fall söks efter 'This'
+GET `localhost:3000/api/v1/events/show/all?search=This`     
+    
+######Headers:    
+X-Api-Key   :   aaaaaa    
+    
+
+##Radera ett event    
+DELETE `localhost:3000/api/v1/events/1/delete`
+     
 ######Headers:    
 X-Api-Key   :   aaaaaa     
 User    :    User1      
 Password    :    123456    
      
+    
 
 
