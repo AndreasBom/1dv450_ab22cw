@@ -63,31 +63,15 @@ POST `localhost:3000/api/v1/events/create`
 X-Api-Key   :   aaaaaa     
 User    :    User1      
 Password    :    123456    
-` {
-    
-"message": "This is the message",
-"name": "New Messate",
-"rating": 2,
-"tags":[
-    {
-        "name": "NewTag"
-    },
-    {
-        "name": "NewTag1"
-    },
-    {
-        "name": "NewTag2"
-    }
-    ],
-"position": [
-    {
-        "latitude": 12,
-        "longitude": 32,
-        "name": "Position ONE"
-    }
-    ]
+     
 
-} `    
+`{
+    "message": "This is the message",
+    "name": "New Messate",
+    "rating": 2,
+    "tags":[{"name": "NewTag"},{"name": "NewTag1"},{"name": "NewTag2"}],
+    "position": [{"latitude": 12,"longitude": 32,"name": "Position ONE"}]
+}`
 
  
 
