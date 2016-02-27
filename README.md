@@ -39,7 +39,7 @@ Kör i kommandotolken:
      
 ###Uppgift 2   
 #####Installation
-* Ladda ner repot
+* Ladda ner repot (exempelvis med git clone https://github.com/AndreasBom/1dv450_ab22cw.git)    
 * Använd en kommandotolk som har ssh ex. git bash, Cygwin etc.
 * I kommandotolken, använd cd 'katalognamn' för att komma till katalogen /project
 * kör följande kommandon för att installera en vagrantmaskin, (kör ett kommando i taget)):
