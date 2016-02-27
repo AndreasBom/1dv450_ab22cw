@@ -64,7 +64,7 @@ X-Api-Key   :   aaaaaa
 User    :    User1      
 Password    :    123456    
      
-
+######Body:     
 `{
     "message": "This is the message",
     "name": "New Messate",
@@ -72,6 +72,28 @@ Password    :    123456
     "tags":[{"name": "NewTag"},{"name": "NewTag1"},{"name": "NewTag2"}],
     "position": [{"latitude": 12,"longitude": 32,"name": "Position ONE"}]
 }`
+    
+##Visa alla event    
+GET `localhost:3000/api/v1/events/show/all`    
+    
+######Headers:    
+X-Api-Key   :   aaaaaa    
+     
+     
+##Visa ett specifikt event    
+GET `localhost:3000/api/v1/events/show/1`     
+    
+######Headers:    
+X-Api-Key   :   aaaaaa    
+    
 
- 
+##Radera ett event    
+DELETE `localhost:3000/api/v1/events/1/delete`    
+     
+######Headers:    
+X-Api-Key   :   aaaaaa     
+User    :    User1      
+Password    :    123456    
+     
+
 
