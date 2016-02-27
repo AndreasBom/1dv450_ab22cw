@@ -63,7 +63,7 @@ POST `localhost:3000/api/v1/events/create`
 X-Api-Key   :   aaaaaa     
 User    :    User1      
 Password    :    123456    
-`{
+` {
     
 "message": "This is the message",
 "name": "New Messate",
@@ -87,6 +87,7 @@ Password    :    123456
     }
     ]
 
-}`      
+} `    
+
  
 
