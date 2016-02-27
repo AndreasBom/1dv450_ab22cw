@@ -19,7 +19,7 @@ För enkelhetens skull finns det en förgenererad API-nyckel som testaren (du) k
 Nyckeln skickas med i http-protokollets header [X-Api-Key]. Om du använder Postman väljer du fliken 'Headers' och i den högra kolumnen (Headers) skriver du X-Api-Key och i den vänstra (Value) skriver du api-nyckeln, alltså aaaaaa     
    
  
- ## Autentisering    
+## Autentisering    
  För att få skapa, ändra och radera events, tags och positions krävs autentiering. Detta görs med Basic HTTP Authentication. Ingen autentiering krävs för att skapa en creator (resursägare). Autentieringen skickas med i HTTP-protokollets headers.    
  I fliken Authorization (Postman) väljer du BasicAuth. Skriv in User och Password. (längre ner i dokumentationen finns beskrivning hur du skapar en creator, vilket är det som skrivs in som User)    
      
@@ -28,6 +28,24 @@ Nyckeln skickas med i http-protokollets header [X-Api-Key]. Om du använder Post
 En förfrågan kan innehålla ett json-objekt som skickas med i HTTP body. Vissa förfrågningar använder även en query string.    
     
     
- ##Länkar till samtliga REST anrop    
+##Länkar till samtliga REST anrop    
+#####Headern (X-Api-Key :  aaaaaa).
+GET `localhost:3000/api/v1/app/index`    
+    
+    
+##Skapa en resursägare (creator)   
+POST `localhost:3000/api/v1/creators/create`    
+    
+#####Headers:    
+(X-Api-Key :  aaaaaa)    
+    
+#####Body   
+`{
+    "creatorname": "User1", 
+    "password": "123456", 
+    "password_confirmation": "123456", 
+    "email": "email@email.com"
+}`    
+
  
 
