@@ -88,8 +88,15 @@ GET `localhost:3000/api/v1/events/show/1`
 X-Api-Key   :   aaaaaa    
     
 
-##Radera ett event    
+##Radera ett event   
+    
+######Headers:    
+X-Api-Key   :   aaaaaa     
+User    :    User1      
+Password    :    123456    
+    
 DELETE `localhost:3000/api/v1/events/delete/1`    
+     
      
 ##Visa alla event    
 GET `localhost:3000/api/v1/events/show/all`    
