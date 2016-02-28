@@ -6,7 +6,7 @@ app/controllers
   * positions_controller.rb    
   * tag_controller.rb
   
-Beskrivningar om hur api'et används baseras på att du använder Postman för att göra förfrågningarna.    
+Beskrivningar om hur api'et används baseras på att du använder Postman för att göra förfrågningarna.       
 
   
 ## Bas-Url    
@@ -29,7 +29,7 @@ En förfrågan kan innehålla ett json-objekt som skickas med i HTTP body. Vissa
     
     
 ##Länkar till samtliga REST anrop    
-#####Headern X-Api-Key :  aaaaaa   
+######Headern X-Api-Key :  aaaaaa   
     
 GET `localhost:3000/api/v1/app/index`    
     
@@ -70,7 +70,7 @@ Password    :    123456
     "name": "New Messate",
     "rating": 2,
     "tags":[{"name": "NewTag"},{"name": "NewTag1"},{"name": "NewTag2"}],
-    "position": [{"latitude": 12,"longitude": 32,"name": "Position ONE"}]
+    "position": {"name", "larmgatan, Kalmar"}
 }`
     
 ##Visa alla event    
@@ -88,7 +88,7 @@ X-Api-Key   :   aaaaaa
     
 
 ##Radera ett event    
-DELETE `localhost:3000/api/v1/events/1/delete`    
+DELETE `localhost:3000/api/v1/events/delete/1`    
      
 ##Visa alla event    
 GET `localhost:3000/api/v1/events/show/all`    
@@ -104,9 +104,19 @@ GET `localhost:3000/api/v1/events/show/all?search=This`
 ######Headers:    
 X-Api-Key   :   aaaaaa    
     
-
+##Updatera ett event    
+PUT `localhost:3000/api/v1/events/update/1`
+     
+######Headers:    
+X-Api-Key   :   aaaaaa     
+User    :    User1      
+Password    :    123456    
+    
+######Body:    
+`{ "message": "This is a updated message", "tags": [{"name": "This is a new Tag"}]}`
+    
 ##Radera ett event    
-DELETE `localhost:3000/api/v1/events/1/delete`
+DELETE `localhost:3000/api/v1/events/delete/1`
      
 ######Headers:    
 X-Api-Key   :   aaaaaa     
@@ -114,5 +124,34 @@ User    :    User1
 Password    :    123456    
      
     
+##Skapa en tag   
+POST `localhost:3000/api/v1/tags/create`    
+    
+######Headers:    
+X-Api-Key   :   aaaaaa     
+User    :    User1      
+Password    :    123456      
+    
+######Body:    
+`{"name": "updatedTag"}`    
+    
+    
+##Visa alla taggar    
+GET `localhost:3000/api/v1/tags/show/all`    
+    
+######Headers:    
+X-Api-Key   :   aaaaaa    
+    
+    
+##Visa en specifik tagg   
+GET `localhost:3000/api/v1/tags/show/1`    
+    
+######Headers:    
+X-Api-Key   :   aaaaaa 
+    
+    
+
+
+
 
 
