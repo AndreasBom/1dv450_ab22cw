@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   include ActionController::Rescue
   protect_from_forgery with: :null_session
-  before_filter :authenticate, only: [:create, :destroy]
+  before_filter :authenticate, only: [:create, :update, :destroy]
   before_action :access_control
   before_filter :limit_response
 
@@ -118,18 +118,80 @@ class EventsController < ApplicationController
     end
   end
 
+  def update
+    event = Event.find(params[:id])
+    # The creator of the event
+    allowed_to_update = event.creator
+    # username sent with the request
+    authorized_user = Creator.find_by creatorname: @creator_name
+
+    if allowed_to_update == authorized_user then
+      if event_params[:tags].present?
+        tags_params = event_params[:tags]
+        tags_params.each do |tag|
+          #If tag exists in database, associate this tag, else create a new tag
+          if Tag.exists?(tag)
+            event.tags << Tag.find_by(tag)
+          else
+            event.tags << Tag.new(tag)
+          end
+        end
+      end
+
+      if event_params[:positions].present?
+        position = event_params[:positions]
+
+        #If position already exists
+        if Position.exists?(position)
+          existed_position = Position.find_by_name(position["name"])
+          event.position_id = existed_position.id
+          event.save
+        else
+          #else create a new
+          new_position = Position.new(position)
+          new_position.save
+          event.position = new_position
+          event.save
+        end
+
+        position = event_params[:positions]
+
+        if Position.exists?(position)
+          event.position = Position.find_by(position)
+        else
+          new_position = Position.create(position)
+          event.position = new_position
+        end
+      end
+
+      if event.update_attributes(event_params.except(:tags, :positions))
+        render json: event, include: [:tags,:creator, :position], status: :ok
+      else
+        render json: event.errors, status: :unprocessable_entry
+      end
+
+    else
+      render json: {"message": "You are not authorized to update this event"}, status: :unauthorized
+    end
+
+  end
+
   #DELETE delete a specified event
   def destroy
     event = Event.find(params[:id])
+    # The creator of the event
+    allowed_destroyer = event.creator
+    # username sent with the request
+    authorized_user = Creator.find_by creatorname: @creator_name
 
-    if event.destroy
-      render json: {"message": "Record was deleted", status: :ok, },  status: :ok
+    # check if the authorized user is the same as the one who created the event
+    if allowed_destroyer == authorized_user then
+      if event.destroy
+        render json: {"message": "Record was deleted", status: :ok, },  status: :ok
+      end
     else
       render json: {"message": "You are not authorized to delete this event"}, status: :unauthorized
     end
-
-
-
   end
 
   private

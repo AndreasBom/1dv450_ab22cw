@@ -14,11 +14,13 @@ Rails.application.routes.draw do
       post 'tags/create' => 'tag#create'
       get 'tags/show/all' => 'tag#index'
       get 'tags/show/:id' => 'tag#show'
+      patch 'tags/update/:id' => 'tag#update'
 
       get 'events/show/all' => 'events#index'
       get 'events/show/:id' => 'events#show'
       post 'events/create' => 'events#create'
       delete 'events/delete/:id' => 'events#destroy'
+      patch 'events/update/:id' => 'events#update'
 
       get 'creators' => 'creators#index'
       get 'creators/show/:id' => 'creators#show'
