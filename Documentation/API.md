@@ -151,6 +151,41 @@ X-Api-Key   :   aaaaaa
     
     
 
+##Skapa en position
+POST `localhost:3000/api/v1/positions/create`     
+    
+######Headers:    
+X-Api-Key   :   aaaaaa     
+User    :    User1      
+Password    :    123456    
+    
+######Body:
+`{ "name": "Larmgatan, Kalmar"}`    
+    
+    
+##Visa alla positioner    
+    
+GET `localhost:3000/api/v1/positions/show/all`    
+    
+######Headers:    
+X-Api-Key   :   aaaaaa    
+    
+    
+##Visa en specifik position    
+GET `localhost:3000/api/v1/positions/show/1`    
+    
+######Headers:    
+X-Api-Key   :   aaaaaa    
+    
+    
+#Visa positioner i närheten    
+Visa positioner i närheten av positionen som har id 1    
+GET `localhost:3000/api/v1/positions/show/1/nearby`   
+    
+######Headers:    
+X-Api-Key   :   aaaaaa
+
+
 
 
 
