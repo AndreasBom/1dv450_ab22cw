@@ -19,7 +19,7 @@ För enkelhetens skull finns det en förgenererad API-nyckel som testaren (du) k
 Nyckeln skickas med i http-protokollets header [X-Api-Key]. Om du använder Postman väljer du fliken 'Headers' och i den högra kolumnen (Headers) skriver du X-Api-Key och i den vänstra (Value) skriver du api-nyckeln, alltså aaaaaa     
    
  
- ## Autentisering    
+## Autentisering    
  För att få skapa, ändra och radera events, tags och positions krävs autentiering. Detta görs med Basic HTTP Authentication. Ingen autentiering krävs för att skapa en creator (resursägare). Autentieringen skickas med i HTTP-protokollets headers.    
  I fliken Authorization (Postman) väljer du BasicAuth. Skriv in User och Password. (längre ner i dokumentationen finns beskrivning hur du skapar en creator, vilket är det som skrivs in som User)    
      
@@ -28,6 +28,91 @@ Nyckeln skickas med i http-protokollets header [X-Api-Key]. Om du använder Post
 En förfrågan kan innehålla ett json-objekt som skickas med i HTTP body. Vissa förfrågningar använder även en query string.    
     
     
- ##Länkar till samtliga REST anrop    
- 
+##Länkar till samtliga REST anrop    
+#####Headern X-Api-Key :  aaaaaa   
+    
+GET `localhost:3000/api/v1/app/index`    
+    
+    
+##Skapa en resursägare (creator)   
+POST `localhost:3000/api/v1/creators/create`    
+    
+######Headers:    
+X-Api-Key :  aaaaaa    
+    
+######Body   
+`{    
+    "creatorname": "User1",    
+    "password": "123456",    
+    "password_confirmation": "123456",     
+    "email": "email@email.com"    
+}`    
+    
+
+##Visa en resursägare    
+GET `localhost:3000/api/v1/creators/show/1`    
+    
+######Headers:    
+X-Api-Key :  aaaaaa     
+    
+    
+##Skapa ett event    
+POST `localhost:3000/api/v1/events/create`    
+     
+######Headers:    
+X-Api-Key   :   aaaaaa     
+User    :    User1      
+Password    :    123456    
+     
+######Body:     
+`{
+    "message": "This is the message",
+    "name": "New Messate",
+    "rating": 2,
+    "tags":[{"name": "NewTag"},{"name": "NewTag1"},{"name": "NewTag2"}],
+    "position": [{"latitude": 12,"longitude": 32,"name": "Position ONE"}]
+}`
+    
+##Visa alla event    
+GET `localhost:3000/api/v1/events/show/all`    
+    
+######Headers:    
+X-Api-Key   :   aaaaaa    
+     
+     
+##Visa ett specifikt event    
+GET `localhost:3000/api/v1/events/show/1`     
+    
+######Headers:    
+X-Api-Key   :   aaaaaa    
+    
+
+##Radera ett event    
+DELETE `localhost:3000/api/v1/events/1/delete`    
+     
+##Visa alla event    
+GET `localhost:3000/api/v1/events/show/all`    
+    
+######Headers:    
+X-Api-Key   :   aaaaaa    
+     
+     
+##Sök efter ett specifikt event    
+Sök efter ett event genom eventets 'namn' eller 'message'. I följande fall söks efter 'This'
+GET `localhost:3000/api/v1/events/show/all?search=This`     
+    
+######Headers:    
+X-Api-Key   :   aaaaaa    
+    
+
+##Radera ett event    
+DELETE `localhost:3000/api/v1/events/1/delete`
+     
+######Headers:    
+X-Api-Key   :   aaaaaa     
+User    :    User1      
+Password    :    123456    
+     
+    
+
 
