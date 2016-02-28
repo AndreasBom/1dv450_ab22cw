@@ -69,7 +69,7 @@ class EventsController < ApplicationController
 
   #POST Create new event and add tags
   def create
-    event = Event.new(event_params.except(:tags, :positions))
+    event = Event.new(event_params.except(:tags, :position))
 
     event.creator = Creator.find_by creatorname: @creator_name
 
@@ -85,25 +85,11 @@ class EventsController < ApplicationController
       end
     end
 
-    if event_params[:positions].present?
-      position = event_params[:positions]
+    if event_params[:position].present?
 
-      #If position already exists
-      if Position.exists?(position)
-        existed_position = Position.find_by_name(position["name"])
-        event.position_id = existed_position.id
-        event.save
-      else
-        #else create a new
-        new_position = Position.new(position)
-        new_position.save
-        event.position = new_position
-        event.save
-      end
+      position = event_params[:position]
 
-      position = event_params[:positions]
-
-      if Position.exists?(position)
+      if Position.find_by(position)
         event.position = Position.find_by(position)
       else
         new_position = Position.create(position)
@@ -112,7 +98,7 @@ class EventsController < ApplicationController
     end
 
     if event.save
-      render json: event, include: [:tags,:creator, :position], status: :created
+      render json: event, include: [:tags, :creator, :position], status: :created
     else
       render json: event.errors, status: :unprocessable_entry
     end
@@ -138,9 +124,10 @@ class EventsController < ApplicationController
         end
       end
 
-      if event_params[:positions].present?
-        position = event_params[:positions]
+      if event_params[:position].present?
+        position = event_params[:position]
 
+=begin
         #If position already exists
         if Position.exists?(position)
           existed_position = Position.find_by_name(position["name"])
@@ -153,8 +140,10 @@ class EventsController < ApplicationController
           event.position = new_position
           event.save
         end
+=end
 
-        position = event_params[:positions]
+        #position = event_params[:positions]
+
 
         if Position.exists?(position)
           event.position = Position.find_by(position)
@@ -202,6 +191,6 @@ class EventsController < ApplicationController
 
   def event_params
     json_params = ActionController::Parameters.new(JSON.parse(request.body.read))
-    json_params.permit(:message, :name, :rating, tags:[:name], positions: [:latitude, :longitude, :name])
+    json_params.permit(:message, :name, :rating, tags:[:name], position:[:latitude, :longitude, :name])
   end
 end
