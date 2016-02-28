@@ -21,7 +21,6 @@ class AppIndexController < ApplicationController
                 "query": [
                     "tag": '?tag=', #in end of show_all
                     "search": '?search=' #in end of show_all
-                    ""
                 ]
             }
         ],
