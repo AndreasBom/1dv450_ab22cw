@@ -6,7 +6,7 @@ app/controllers
   * positions_controller.rb    
   * tag_controller.rb
   
-Beskrivningar om hur api'et används baseras på att du använder Postman för att göra förfrågningarna.    
+Beskrivningar om hur api'et används baseras på att du använder Postman för att göra förfrågningarna.       
 
   
 ## Bas-Url    
@@ -29,7 +29,8 @@ En förfrågan kan innehålla ett json-objekt som skickas med i HTTP body. Vissa
     
     
 ##Länkar till samtliga REST anrop    
-#####Headern X-Api-Key :  aaaaaa   
+######Headers:     
+X-Api-Key :  aaaaaa   
     
 GET `localhost:3000/api/v1/app/index`    
     
@@ -70,7 +71,7 @@ Password    :    123456
     "name": "New Messate",
     "rating": 2,
     "tags":[{"name": "NewTag"},{"name": "NewTag1"},{"name": "NewTag2"}],
-    "position": [{"latitude": 12,"longitude": 32,"name": "Position ONE"}]
+    "position": {"name", "larmgatan, Kalmar"}
 }`
     
 ##Visa alla event    
@@ -87,26 +88,53 @@ GET `localhost:3000/api/v1/events/show/1`
 X-Api-Key   :   aaaaaa    
     
 
-##Radera ett event    
-DELETE `localhost:3000/api/v1/events/1/delete`    
-     
-##Visa alla event    
-GET `localhost:3000/api/v1/events/show/all`    
+##Radera ett event   
+DELETE `localhost:3000/api/v1/events/delete/1`     
     
 ######Headers:    
-X-Api-Key   :   aaaaaa    
-     
-     
+X-Api-Key   :   aaaaaa     
+User    :    User1      
+Password    :    123456    
+    
+    
+
 ##Sök efter ett specifikt event    
-Sök efter ett event genom eventets 'namn' eller 'message'. I följande fall söks efter 'This'
+Sök efter ett event genom eventets 'namn' eller 'message'. I följande fall söks efter 'This'    
 GET `localhost:3000/api/v1/events/show/all?search=This`     
     
 ######Headers:    
 X-Api-Key   :   aaaaaa    
     
-
+    
+##Sök efter event med offset och limit    
+hämtar 2 events, men en offset på 2.    
+GET `localhost:3000/api/v1/events/show/all?offset=2&limit=2`    
+    
+######Headers:    
+X-Api-Key   :   aaaaaa    
+    
+    
+##Sök efter event efter tagnamn   
+visar events som har tag med namnet NewTag1    
+GET `localhost:3000/api/v1/events/show/all?tag=NewTag1`        
+    
+######Headers:    
+X-Api-Key   :   aaaaaa     
+    
+    
+##Updatera ett event    
+PUT `localhost:3000/api/v1/events/update/1`
+     
+######Headers:    
+X-Api-Key   :   aaaaaa     
+User    :    User1      
+Password    :    123456    
+    
+######Body:    
+`{ "message": "This is a updated message", "tags": [{"name": "This is a new Tag"}]}`
+    
 ##Radera ett event    
-DELETE `localhost:3000/api/v1/events/1/delete`
+DELETE `localhost:3000/api/v1/events/delete/1`
      
 ######Headers:    
 X-Api-Key   :   aaaaaa     
@@ -114,5 +142,69 @@ User    :    User1
 Password    :    123456    
      
     
+##Skapa en tag   
+POST `localhost:3000/api/v1/tags/create`    
+    
+######Headers:    
+X-Api-Key   :   aaaaaa     
+User    :    User1      
+Password    :    123456      
+    
+######Body:    
+`{"name": "NewTag"}`    
+    
+    
+##Visa alla taggar    
+GET `localhost:3000/api/v1/tags/show/all`    
+    
+######Headers:    
+X-Api-Key   :   aaaaaa    
+    
+    
+##Visa en specifik tagg   
+GET `localhost:3000/api/v1/tags/show/1`    
+    
+######Headers:    
+X-Api-Key   :   aaaaaa 
+    
+    
+
+##Skapa en position
+POST `localhost:3000/api/v1/positions/create`     
+    
+######Headers:    
+X-Api-Key   :   aaaaaa     
+User    :    User1      
+Password    :    123456    
+    
+######Body:
+`{ "name": "Larmgatan, Kalmar"}`    
+    
+    
+##Visa alla positioner    
+    
+GET `localhost:3000/api/v1/positions/show/all`    
+    
+######Headers:    
+X-Api-Key   :   aaaaaa    
+    
+    
+##Visa en specifik position    
+GET `localhost:3000/api/v1/positions/show/1`    
+    
+######Headers:    
+X-Api-Key   :   aaaaaa    
+    
+    
+#Visa positioner i närheten    
+Visa positioner i närheten av positionen som har id 1    
+GET `localhost:3000/api/v1/positions/show/1/nearby`   
+    
+######Headers:    
+X-Api-Key   :   aaaaaa
+
+
+
+
 
 
