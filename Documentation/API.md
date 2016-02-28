@@ -29,7 +29,8 @@ En förfrågan kan innehålla ett json-objekt som skickas med i HTTP body. Vissa
     
     
 ##Länkar till samtliga REST anrop    
-######Headern X-Api-Key :  aaaaaa   
+######Headers:     
+X-Api-Key :  aaaaaa   
     
 GET `localhost:3000/api/v1/app/index`    
     
