@@ -114,7 +114,14 @@ GET `localhost:3000/api/v1/events/show/all?offset=2&limit=2`
 X-Api-Key   :   aaaaaa    
     
     
-
+##Sök efter event efter tagnamn   
+visar events som har tag med namnet NewTag1    
+GET `localhost:3000/api/v1/events/show/all?tag=NewTag1`        
+    
+######Headers:    
+X-Api-Key   :   aaaaaa     
+    
+    
 ##Updatera ett event    
 PUT `localhost:3000/api/v1/events/update/1`
      
@@ -159,14 +166,6 @@ GET `localhost:3000/api/v1/tags/show/1`
     
 ######Headers:    
 X-Api-Key   :   aaaaaa 
-    
-    
-##Sök efter event efter tagnamn   
-visar events som har tag med namnet NewTag1    
-GET `localhost:3000/api/v1/events/show/all?tag=NewTag1`        
-    
-######Headers:    
-X-Api-Key   :   aaaaaa     
     
     
 
