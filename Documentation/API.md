@@ -105,7 +105,7 @@ X-Api-Key   :   aaaaaa
      
      
 ##Sök efter ett specifikt event    
-Sök efter ett event genom eventets 'namn' eller 'message'. I följande fall söks efter 'This'
+Sök efter ett event genom eventets 'namn' eller 'message'. I följande fall söks efter 'This'    
 GET `localhost:3000/api/v1/events/show/all?search=This`     
     
 ######Headers:    
