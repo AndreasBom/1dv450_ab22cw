@@ -123,7 +123,7 @@ X-Api-Key   :   aaaaaa
     
     
 ##Updatera ett event    
-PUT `localhost:3000/api/v1/events/update/1`
+PATCH `localhost:3000/api/v1/events/update/1`
      
 ######Headers:    
 X-Api-Key   :   aaaaaa     
