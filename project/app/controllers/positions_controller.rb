@@ -40,7 +40,13 @@ class PositionsController < ApplicationController
 
   end
 
-
+  def destroy
+    if Position.destroy(Position.find(params[:id]))
+      render json: {"message": "Position was deleted", status: :ok}
+    else
+      render json: position.errors, status: :unprocessable_entry
+    end
+  end
 
 
   private

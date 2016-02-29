@@ -127,24 +127,6 @@ class EventsController < ApplicationController
       if event_params[:position].present?
         position = event_params[:position]
 
-=begin
-        #If position already exists
-        if Position.exists?(position)
-          existed_position = Position.find_by_name(position["name"])
-          event.position_id = existed_position.id
-          event.save
-        else
-          #else create a new
-          new_position = Position.new(position)
-          new_position.save
-          event.position = new_position
-          event.save
-        end
-=end
-
-        #position = event_params[:positions]
-
-
         if Position.exists?(position)
           event.position = Position.find_by(position)
         else

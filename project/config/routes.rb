@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get 'positions/show/:id' => 'positions#show'
       get 'positions/show/:id/nearby' => 'positions#nearby'
       post 'positions/create' => 'positions#create'
+      delete 'positions/delete/:id' => 'positions#destroy'
 
       post 'tags/create' => 'tag#create'
       get 'tags/show/all' => 'tag#index'
