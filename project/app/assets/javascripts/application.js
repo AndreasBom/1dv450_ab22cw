@@ -14,4 +14,22 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+
+
+//= require angular/angular.min.js
+//= require angular/angular-route.min.js
+
+
+//= require angular/angular-simple-logger.js
+//= require angular/angular-google-maps.js
+//= require angular/lodash.js
+
+// require angular/ng-map.min.js
+
+
+//= require swlls/app.js
+// require swlls/factories.js
+//= require swlls/showGMapsViewModel.js
+// require swlls/gMapsViewModel.js
+
 //= require_tree .

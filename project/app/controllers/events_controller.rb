@@ -173,6 +173,6 @@ class EventsController < ApplicationController
 
   def event_params
     json_params = ActionController::Parameters.new(JSON.parse(request.body.read))
-    json_params.permit(:message, :name, :rating, tags:[:name], position:[:latitude, :longitude, :name])
+    json_params.permit(:message, :name, :rating, tags:[:name], position:[:latitude, :longitude, :name, :address])
   end
 end

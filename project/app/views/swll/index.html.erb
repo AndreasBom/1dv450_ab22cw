@@ -1,0 +1,108 @@
+
+<div data-ng-controller="Gmaps" id="map_canvas" class="row wrapper">
+  <div id="left" class="col-sm-4">
+    <div ng-repeat="event in events" class="events">
+      <h3>{{event.position.name}} </h3>
+      <span class="rating">Betyg: {{event.rating}}/5</span>
+      <em>Adress:</em> {{event.position.address}}
+      <div>
+        <p>{{event.message}}</p>
+      </div>
+      <div id="tag-holder" ng-repeat="tag in event.tags">
+        {{tag.name}}
+      </div>
+    </div>
+  </div>
+
+  <div id="right" class="col-sm-8">
+    <ui-gmap-google-map
+    center='map.center'
+    zoom='map.zoom'
+    events="map.events"
+    options="map.options">
+      <ui-gmap-markers models="markers"
+                       idkey="markers.id"
+                       coords="'coords'"
+                       click="onClick"
+                       events="markers.events"
+                       icon="'icon'">
+        <ui-gmap-windows>
+          <div ng-non-bindable>
+            <div id="head">
+              <h3>{{title}} <span class="rating">Betyg: {{rating}}/5</span></h3>
+            </div>
+            <em>Adress:</em> {{address}}
+            <div id="message">
+              <p>{{message}}</p>
+            </div>
+            <div id="tag-holder" ng-repeat="tag in tags">
+              {{tag.name}}
+            </div>
+          </div>
+        </ui-gmap-windows>
+      </ui-gmap-markers>
+    </ui-gmap-google-map>
+  </div>
+</div>
+
+<!--<ui-gmap-markers models="markers"
+                 idkey="markers.id"
+                 coords="'coords'"
+                 click="onClick"
+                 events="markers.events">
+  <ui-gmap-windows show="show"
+                   templateUrl="template"
+                   templateParameter="{title: 'myTitle'}">
+
+  </ui-gmap-windows>
+
+</ui-gmap-markers>-->
+
+<!--  <div id="map_canvas">-->
+    <!--<ui-gmap-google-map center="map.center"
+                        zoom="map.zoom"
+                        draggable="true"
+                        options="map.options"
+                        events="map.events"
+                        control="googlemap">
+      <ui-gmap-window coords="MapOptions.markers.selected.coords"
+                      show="windowOptions.show" options="windowOptions"
+                      closeClick="closeClick()">
+        <div>Hello</div>
+      </ui-gmap-window>
+      <ui-gmap-markers models="markers"
+                       idkey="markers.id"
+                       coords="'coords'"
+                       click="'onClick'"
+                       events="markers.events">
+      </ui-gmap-markers>
+    </ui-gmap-google-map>
+-->
+
+    <!--<ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="map.options">
+
+      <ui-gmap-window coords="MapOptions.markers.selected.coords"
+                      show="windowOptions.show"
+                      closeClick="closeClick()">
+      </ui-gmap-window>
+      <ui-gmap-markers models="markers"
+                       coords="'self'"
+                       icon="'icon'"
+                       click="onClick"
+                       events="markers.events">
+       &lt;!&ndash; </ui-gmap-window>&ndash;&gt;
+      </ui-gmap-markers>-->
+
+        <!--<div>
+          <h4>{{title}}</h4>
+          <em>Koordinat:</em> Lat: {{latitude}} Lng: {{longitude}}<br/>
+          <em>Adress:</em> {{address}}<br/>
+          {{message}}
+        </div>-->
+
+        <!--<ui-gmap-window options="windowOptions" closeClick="closeClick()">-->
+        <!--<div>{{title}}</div>
+      </ui-gmap-window>
+    </ui-gmap-google-map>-->
+<!--  </div>
+</div>-->

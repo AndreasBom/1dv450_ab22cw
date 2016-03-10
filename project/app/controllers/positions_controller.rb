@@ -53,7 +53,7 @@ class PositionsController < ApplicationController
 
   def position_params
     json_params = ActionController::Parameters.new(JSON.parse(request.body.read))
-    json_params.permit(:latitude, :longitude, :name)
+    json_params.permit(:latitude, :longitude, :name, :address)
   end
 
 end

@@ -61,3 +61,5 @@ end
 gem 'bootstrap-sass'
 
 gem 'geocoder'
+
+gem 'font-awesome-sass'

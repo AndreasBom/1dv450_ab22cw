@@ -51,9 +51,9 @@ class ApisController < ApplicationController
       @api = Api.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+
     def api_params
-      params.require(:apiservice).permit(:key, :application)
+      params.require(:api).permit(:key, :application)
     end
 
     def generate_api_key

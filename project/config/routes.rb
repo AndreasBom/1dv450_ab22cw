@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
+  # Application
+  get 'swll' => 'swll#index'
+  get 'swll/info' => 'swll/info'
 
-
+  # API
   scope :api do
     scope :v1 do
       get 'app/index' => 'app_index#index'
@@ -40,6 +43,7 @@ Rails.application.routes.draw do
     end
   end
 
+  #API registration
   resources :users do
     resources :apis, only: [:new, :create, :destroy]
   end

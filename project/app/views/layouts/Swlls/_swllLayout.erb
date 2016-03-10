@@ -5,14 +5,19 @@
   <title><%= content_for?(:title) ? yield(:title) : "Swll" %></title>
   <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Swll" %>">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
 <header>
-  <%= render 'layouts/navigation' %>
+  <div class="container">
+    <%= render 'layouts/Swlls/navigation' %>
+  </div>
+
 </header>
-<main role="main">
+<main data-ng-app="app">
   <div class="container">
     <%= render 'layouts/messages' %>
     <%= yield %>

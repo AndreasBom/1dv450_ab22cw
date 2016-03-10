@@ -2,6 +2,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+
 // make all images responsive by default
 img {
   @extend .img-responsive;
@@ -40,9 +42,10 @@ img {
 main {
   @extend .container;
   background-color: #fff;
+  background-color: #F5F3EE;
   padding-bottom: 80px;
   width: 100%;
-  margin-top: 51px; // accommodate the navbar
+  margin-top: 10px; // accommodate the navbar
   }
 section {
   @extend .row;
