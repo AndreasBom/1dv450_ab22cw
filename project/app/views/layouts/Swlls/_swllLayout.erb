@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="sv">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= content_for?(:title) ? yield(:title) : "Swll" %></title>
   <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Swll" %>">
+  <link href='https://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
   <%= csrf_meta_tags %>
+  <base href="/">
 </head>
-<body>
+<body data-ng-app="app" ng-controller="NavigationViewModel">
 <header>
   <div class="container">
     <%= render 'layouts/Swlls/navigation' %>
   </div>
 
 </header>
-<main data-ng-app="app">
+<main id="main">
   <div class="container">
     <%= render 'layouts/messages' %>
+    <flash-message duration="7000" show-close="true" on-dismiss="flashCallback(flash)" ></flash-message>
     <%= yield %>
 
     <!-- Debugging for development -->

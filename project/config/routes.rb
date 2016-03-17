@@ -53,6 +53,7 @@ Rails.application.routes.draw do
   delete 'users/:id/apis/:id' => 'apis#destroy'
   get 'user' => 'users#show'
 
-  root 'sessions#new'
+  root 'swll#index'
 
+  match "*path", to: "swll#index", via: :all
 end

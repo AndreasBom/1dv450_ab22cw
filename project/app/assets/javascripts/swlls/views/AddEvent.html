@@ -1,0 +1,37 @@
+<div ng-controller="AddEvent">
+
+    <form novalidate class="form-group">
+
+        <h3>Lägg till hak</h3>
+
+        <label for="name">Namn på hak</label>
+        <input type="text" id="name" class="form-control" ng-model="event.name">
+
+        <label for="rating">Betyg(1-5)</label>
+        <select name="rating" id="rating" ng-model="event.rating" class="form-control">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label for="description">Beskrivning</label>
+        <textarea id="description" rows="5" ng-model="event.message" class="form-control"></textarea>
+
+        <label for="tags">Taggar</label>
+        <input type="text" ng-repeat="item in event.tags" id="tags" ng-model="item.name" class="form-control">
+        <button class="btn btn-xs btn-default block" id="addTagBtn" ng-click="addTag()"><i class="fa fa-plus"></i>Lägg till tag</button>
+
+        <label for="positionName">Platsnamn</label>
+        <input type="text" id="positionName" ng-model="position.name"  class="form-control">
+
+        <label for="positionAddress">Adress/plats</label>
+        <input type="text" id="positionAddress" ng-model="position.address" class="form-control">
+
+
+        <button class="btn btn-sm btn-info" id="saveBtn" ng-click="saveEvent()">Spara</button>
+    </form>
+
+
+</div>

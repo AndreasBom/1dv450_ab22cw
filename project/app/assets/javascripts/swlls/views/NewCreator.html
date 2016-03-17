@@ -1,0 +1,24 @@
+<div ng-controller="NewCreator">
+
+
+    <form  class="form-group">
+
+        <h3>Skapa en ny användare</h3>
+        <div ng-show="showFlashMessage" class="alert alert-danger">{{flashmessage}}</div>
+
+        <label for="creatorname">Användarnamn</label>
+        <input type="text" id="creatorname" class="form-control" ng-model="creator.creatorname">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" class="form-control" ng-model="creator.email">
+
+        <label for="password">Lösenord</label>
+        <input type="password" id="password" class="form-control" ng-model="creator.password">
+
+        <label for="password_confirmation">Bekräfta lösenord</label>
+        <input type="password" id="password_confirmation" class="form-control" ng-model="creator.password_confirmation">
+
+        <button class="btn btn-sm btn-info" id="saveBtn" ng-click="saveCreator()">Spara</button>
+    </form>
+
+</div>

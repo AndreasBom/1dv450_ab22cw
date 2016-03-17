@@ -18,18 +18,19 @@
 
 //= require angular/angular.min.js
 //= require angular/angular-route.min.js
-
+//= require dist/angular-flash.min.js
 
 //= require angular/angular-simple-logger.js
 //= require angular/angular-google-maps.js
 //= require angular/lodash.js
 
-// require angular/ng-map.min.js
-
 
 //= require swlls/app.js
-// require swlls/factories.js
-//= require swlls/showGMapsViewModel.js
-// require swlls/gMapsViewModel.js
+//= require swlls/viewModels/showGMapsViewModel.js
+//= require swlls/viewModels/deleteViewModel.js
+//= require swlls/viewModels/addEventViewModel.js
+//= require swlls/viewModels/newCreatorViewModel.js
+//= require swlls/viewModels/navigationViewModel.js
+
 
 //= require_tree .

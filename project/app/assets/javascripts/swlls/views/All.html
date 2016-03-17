@@ -1,0 +1,20 @@
+<div>
+    <button ng-click="showAll()" class="btn btn-info btn-sm">Visa alla</button>
+    <button ng-click="showPagewise()" class="btn btn-info btn-sm">Visa sidvis</button>
+</div>
+
+
+<div ng-repeat="event in filteredEvents | filter:filter.allText"  class="events">
+    <h3 id="event-name">{{event.name}} <span class="rating">Betyg: {{event.rating}}/5 </span></h3>
+    <em>Adress:</em> {{event.position.address}}
+    <div class="message">
+        <p>{{event.message}}</p>
+    </div>
+    <div class="tag-holder" ng-repeat="tag in event.tags" ng-click="filterTag(tag.id)" title="Visa alla med taggen '{{tag.name}}'">
+        {{tag.name}}
+    </div>
+
+
+    <button ng-click="navigation('/Delete/', event.id)" class="btn btn-link discrete">Radera?</button>
+
+</div>
