@@ -1,7 +1,7 @@
 
 (function(){
 
-    app.controller('NavigationViewModel', function($scope, $rootScope, $location, Flash){
+    app.controller('NavigationViewModel', function($scope, $rootScope, $location, $window, Flash){
 
         $scope.navigation = function(value, id){
             if(id == undefined){
@@ -10,9 +10,16 @@
             navigateTo(value + id);
         };
 
+        $scope.relocateTo = function (path){
+            console.log("Relocate");
+            $window.location.href = path;
+        };
+
         var navigateTo = function(path){
             return $location.path(path);
         };
+
+
 
         $rootScope.successFlash = function (head, body) {
             var message = '<strong>' + head + ' ' + '</strong>' + body;

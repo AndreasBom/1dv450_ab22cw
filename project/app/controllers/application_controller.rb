@@ -31,8 +31,8 @@ class ApplicationController < ActionController::Base
   end
 
   # DEFAULT
-  OFFSET = 0
-  LIMIT = 25
+  OFFSET = nil
+  LIMIT = nil
 
   # offset and limit response
   def limit_response

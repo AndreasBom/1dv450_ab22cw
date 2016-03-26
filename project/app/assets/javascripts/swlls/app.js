@@ -14,7 +14,7 @@ var app = angular.module('app', ['ngRoute', 'uiGmapgoogle-maps', 'ngFlash'])
         $routeProvider
             .when('/ShowAll', {
                 templateUrl: "assets/swlls/views/All.html",
-                controller: 'Gmaps'
+                controller: 'Show'
             })
             .when('/Delete/:id', {
                 templateUrl: "assets/swlls/views/Delete.html",
@@ -32,3 +32,14 @@ var app = angular.module('app', ['ngRoute', 'uiGmapgoogle-maps', 'ngFlash'])
             .otherwise({ redirectTo: '/ShowAll' });
 
     });
+
+//pagination filter
+app.filter('startFrom', function(){
+    return function(input, start){
+        if(start != undefined && input != undefined){
+            start = +start;
+            return input.slice(start);
+        }
+    }
+});
+

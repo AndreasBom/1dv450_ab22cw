@@ -27,6 +27,7 @@
 
 //= require swlls/app.js
 //= require swlls/viewModels/showGMapsViewModel.js
+//= require swlls/viewModels/showEventsViewModel.js
 //= require swlls/viewModels/deleteViewModel.js
 //= require swlls/viewModels/addEventViewModel.js
 //= require swlls/viewModels/newCreatorViewModel.js

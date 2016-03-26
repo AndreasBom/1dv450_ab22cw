@@ -1,29 +1,21 @@
 (function(){
     app.controller('Delete', function($scope, $rootScope, $routeParams, $http, $location, $window){
-        $rootScope.showSearch = false;
+        $rootScope.showSearch = false; //Hide search bar
+        $rootScope.loading = false; //Hide loading
 
         var eventId = $routeParams.id;
         var creatorIdOfEvent = "";
         var creatorObj= "";
 
         //Get creator id of specific event
-        $scope.filteredEvents.forEach(function(event){
+        $scope.eventsToShow.forEach(function(event){
             if(event.id == eventId){
                 creatorIdOfEvent = event.creator_id;
             }
         });
 
-        //validated on client that username is same as creator of event
-/*        $scope.usernameOnBlur = function(){
-            $scope.showMessage = false;
-            if(creatorObj.creatorname != $scope.username){
-                $scope.message = "Du är inte behörig att radera eventet!";
-                $scope.showMessage = true;
-            }
-        };*/
-
-
         $scope.deleteEvent = function(){
+            $rootScope.loading = true;
             $http({
                 method: 'DELETE',
                 url: "http://localhost:3000/api/v1/events/delete/" + eventId,
@@ -34,9 +26,11 @@
                 if(response.status = 200){
                     $window.location.href = '/';
                 }else{
+                    $scope.message = "Det gick inte radera haket";
                     $location.path('/Delete');
                 }
             }, function errorCallback(response){
+                $rootScope.loading = false;
                 var ret = {"status" : response.status, "statusText": response.statusText }
                 return ret;
             });

@@ -29,7 +29,6 @@
                     cleanForm();
                 }else{
                     $rootScope.warningFlash('Något gick fel!', 'Vänligen försök igen');
-                    //$location.path('/AddEvent');
                 }
             }, function errorCallback(data, status, headers, config){
                 $rootScope.warningFlash('Något gick fel!', 'Vänligen försök igen');

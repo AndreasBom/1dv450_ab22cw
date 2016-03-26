@@ -1,10 +1,16 @@
-<div>
-    <button ng-click="showAll()" class="btn btn-info btn-sm">Visa alla</button>
-    <button ng-click="showPagewise()" class="btn btn-info btn-sm">Visa sidvis</button>
-</div>
 
+    <div class="btn-group btn-group-justified">
+        <div class="btn-group">
+            <button ng-click="showAll()" class="btn btn-info btn-sm">Visa alla</button>
+        </div>
+        <div class="btn-group">
+            <button ng-click="showPagewise()" class="btn btn-info btn-sm">Visa sidvis</button>
+        </div>
+    </div>
 
-<div ng-repeat="event in filteredEvents | filter:filter.allText"  class="events">
+    <pagination></pagination>
+
+<div ng-repeat="event in eventsToShow | filter:filter.allText | startFrom:currentPage*pageSize | limitTo:pageSize" class="events">
     <h3 id="event-name">{{event.name}} <span class="rating">Betyg: {{event.rating}}/5 </span></h3>
     <em>Adress:</em> {{event.position.address}}
     <div class="message">

@@ -1,5 +1,5 @@
 
-<div data-ng-controller="Gmaps" id="map_canvas" class="row wrapper">
+<div data-ng-controller="Show" id="map_canvas" class="row wrapper">
 
 
 
@@ -7,6 +7,7 @@
     <div id="search">
       <input ng-show="showSearch" id="search-box" class="form-control" placeholder="Sök" type="text" ng-model="filter.allText" />
     </div>
+    <!--rotating wheel that shows when loading-->
     <div ng-show="loading">
       <div class="sk-circle">
         <div class="sk-circle1 sk-child"></div>
@@ -23,22 +24,23 @@
         <div class="sk-circle12 sk-child"></div>
       </div>
     </div>
+    <!--Angular View-->
     <div ng-view></div>
 
 
   </div>
 
-  <div id="right" class="col-sm-8">
+  <div id="right" class="col-sm-8" ng-controller="Gmaps">
     <ui-gmap-google-map
     center='map.center'
     zoom='map.zoom'
     events="map.events"
     options="map.options">
-      <ui-gmap-markers models="markers"
-                       idkey="markers.id"
+      <ui-gmap-markers models="markersToShow"
+                       idkey="markersToShow.id"
                        coords="'coords'"
                        click="onClick"
-                       events="markers.events"
+                       events="markersToShow.events"
                        icon="'icon'">
         <ui-gmap-windows ng-cloak>
           <div ng-non-bindable>

@@ -232,6 +232,11 @@ a{
 
 .btn-info{
   background-color: #8aa4be;
+  border-color: #8aa4be;
+}
+
+.btn-info:nth-child(odd){
+  border-right: 1px solid #F5F3EE;
 }
 
 .discrete{
@@ -303,5 +308,16 @@ textarea {
   background-color: #fff;
   margin-top: 15px;
   padding: 10px;
+}
 
+.center{
+  text-align: center;
+}
+
+.fa{
+  color: #8aa4be;
+}
+
+.fa:hover{
+  color: #217DBB;
 }

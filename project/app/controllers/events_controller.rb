@@ -15,8 +15,10 @@ class EventsController < ApplicationController
              .joins(events_tags:  :tag)
              .where(tags: {name: params[:tag]})
 
-      events = events.drop(@offset)
-      events = events.take(@limit)
+      if !@offset.nil?
+        events = events.drop(@offset)
+        events = events.take(@limit)
+      end
 
       response = {offset: @offset,
                   limit: @limit,
@@ -43,8 +45,10 @@ class EventsController < ApplicationController
       events = Event.order("updated_at DESC").all
       if !events.nil?
 
-        events = events.drop(@offset)
-        events = events.take(@limit)
+        if !@offset.nil?
+          events = events.drop(@offset)
+          events = events.take(@limit)
+        end
 
         response = {offset: @offset,
                     limit: @limit,

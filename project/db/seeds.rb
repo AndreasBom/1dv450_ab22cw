@@ -60,59 +60,70 @@ tag8 = Tag.create(name: "Tag3")
 tag9 = Tag.create(name: "Tag4")
 
 #Event 1
-event = Event.create(name: 'Lilla puben', rating: 3, message: "Lilla puben Bla, Bla, Bla, Bla")
-
-
-position = Position.create(name: "Lilla puben", address: "Larmgatan, Kalmar")
-
+event = Event.create(name: 'Lilla puben*', rating: 3, message: "Lilla puben Bla, Bla, Bla, Bla")
+position = Position.create(name: "Lilla puben*", address: "Larmgatan, Kalmar")
 event.position = position
 event.tags << tag1
 event.tags << tag2
 
 
 #Event 2
-event = Event.create(name: "Harrys", rating: 4, message: "Harrys Bla, Bla, Bla, Bla Bla, Bla, Bla, Bla")
-
-
-position = Position.create(name: "Harrys", address: "Storgatan, Kalmar")
+event = Event.create(name: "Harrys*", rating: 4, message: "Harrys Bla, Bla, Bla, Bla Bla, Bla, Bla, Bla")
+position = Position.create(name: "Harrys*", address: "Byxelkrok")
 event.position = position
-
 event.tags << tag8
 event.tags << tag3
 event.tags << tag2
 
 #Event 3
-event = Event.create(name: "Lilla Syltan", rating: 4, message: "Lilla Syltan Bla, Bla, Bla, Bla Bla, Bla, Bla, Bla")
-
-position = Position.create(name: "Lilla Syltan", address: "Första långgatan, Göteborg")
+event = Event.create(name: "Lilla Syltan*", rating: 4, message: "Lilla Syltan Bla, Bla, Bla, Bla Bla, Bla, Bla, Bla")
+position = Position.create(name: "Lilla Syltan*", address: "Första långgatan, Göteborg")
 event.position = position
-
 event.tags << tag5
 event.tags << tag7
 event.tags << tag1
 
 
 #Event 4
-event = Event.create(name: "Murries", rating: 2, message: "Murries Bla, Bla, Bla, Bla Bla, Bla, Bla, Bla")
-
-
-position = Position.create(name: "Murries", address: "Simrishamnsgatan, Malmö")
+event = Event.create(name: "Murries*", rating: 2, message: "Murries Bla, Bla, Bla, Bla Bla, Bla, Bla, Bla")
+position = Position.create(name: "Murries*", address: "Simrishamnsgatan, Malmö")
 event.position = position
-
 event.tags << tag9
 event.tags << tag6
 event.tags << tag2
 event.tags << tag4
 
 
-
 #Event 5
-event = Event.create(name: "Stora Hotellet", rating: 2, message: "Stora Hotellet Bla, Bla, Bla, Bla Bla, Bla, Bla, Bla")
-
-
-position = Position.create(name: "Stora Hotellet", address: "Storgatan, Växjö")
+event = Event.create(name: "Stora Hotellet*", rating: 2, message: "Stora Hotellet Bla, Bla, Bla, Bla Bla, Bla, Bla, Bla")
+position = Position.create(name: "Stora Hotellet*", address: "Storgatan, Växjö")
 event.position = position
-
 event.tags << tag9
+
+
+#Event 6
+event = Event.create(name: "Ölstället*", rating: 4, message: "Ölstället Bla, Bla, Bla, Bla Bla, Bla, Bla, Bla")
+position = Position.create(name: "Ölstället*", address: "Halmstad")
+event.position = position
+event.tags << tag2
+event.tags << tag5
+event.tags << tag4
+
+#Event 7
+event = Event.create(name: "BeerMe*", rating: 1, message: "BeerMe Bla, Bla, Bla, Bla Bla, Bla, Bla, Bla")
+position = Position.create(name: "BeerMe*", address: "Åmål")
+event.position = position
+event.tags << tag3
+event.tags << tag7
+event.tags << tag8
+
+#Event 8
+event = Event.create(name: "Ballakinen*", rating: 1, message: "Ballakinen Bla, Bla, Bla, Bla Bla, Bla, Bla, Bla")
+position = Position.create(name: "Ballakinen*", address: "Jönköping")
+event.position = position
+event.tags << tag2
+event.tags << tag7
+
+
 
 
