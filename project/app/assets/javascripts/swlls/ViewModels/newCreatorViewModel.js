@@ -1,6 +1,6 @@
 (function(){
 
-    app.controller('NewCreator', function($scope, $rootScope, $http, $window){
+    app.controller('NewCreator', function($scope, $rootScope, $http, $cookies, $window){
         $rootScope.showSearch = false;
 
         $scope.creator = {
@@ -25,8 +25,8 @@
                 data: info
             }).then(function successCallback(response){
                 if(response.status = 201){
-                    $rootScope.successFlash('Användaren sparades!', '');
-                    cleanForm();
+                    $cookies.put('beerjoint', "Användaren sparades!");
+                    $window.location.href = '/';
                 }else{
                     $rootScope.warningFlash('Något gick fel!', 'Vänligen försök igen');
                 }
@@ -34,12 +34,6 @@
                 $rootScope.warningFlash('Något gick fel!', 'Vänligen försök igen');
             });
         };
-
-        var cleanForm = function(){
-            $scope.creator = {};
-
-        };
-
 
 
     });

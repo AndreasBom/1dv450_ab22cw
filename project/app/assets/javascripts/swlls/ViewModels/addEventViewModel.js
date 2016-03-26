@@ -1,5 +1,5 @@
 (function(){
-    app.controller('AddEvent', function($scope, $rootScope, $http, $window){
+    app.controller('AddEvent', function($scope, $rootScope, $http, $window, $cookies){
         $rootScope.showSearch = false;
         $rootScope.loading = false;
         $scope.event = {
@@ -42,13 +42,14 @@
                 data: info
             }).then(function successCallback(response){
                 if(response.status = 200){
+                    $cookies.put('beerjoint', "Haket sparades!");
                     $window.location.href = '/';
                 }else{
+                    $rootScope.warningFlash("Det gick inte att spara eventet. Försök igen");
                     $location.path('/AddEvent');
                 }
             }, function errorCallback(response){
-                var ret = {"status" : response.status, "statusText": response.statusText }
-                return ret;
+                return {"status" : response.status, "statusText": response.statusText };
             });
 
         };

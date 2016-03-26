@@ -18,6 +18,7 @@
 
 //= require angular/angular.min.js
 //= require angular/angular-route.min.js
+//= require angular/angular-cookie.js
 //= require dist/angular-flash.min.js
 
 //= require angular/angular-simple-logger.js

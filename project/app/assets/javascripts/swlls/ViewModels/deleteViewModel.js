@@ -1,5 +1,5 @@
 (function(){
-    app.controller('Delete', function($scope, $rootScope, $routeParams, $http, $location, $window){
+    app.controller('Delete', function($scope, $rootScope, $routeParams, $http, $location, $cookies, $window){
         $rootScope.showSearch = false; //Hide search bar
         $rootScope.loading = false; //Hide loading
 
@@ -24,6 +24,7 @@
                 }
             }).then(function successCallback(response){
                 if(response.status = 200){
+                    $cookies.put('beerjoint', "Haket har raderats!");
                     $window.location.href = '/';
                 }else{
                     $scope.message = "Det gick inte radera haket";

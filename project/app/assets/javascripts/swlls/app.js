@@ -8,7 +8,7 @@ var app = angular.module('app', ['ngRoute', 'uiGmapgoogle-maps'])
         });
     });*/
 
-var app = angular.module('app', ['ngRoute', 'uiGmapgoogle-maps', 'ngFlash'])
+var app = angular.module('app', ['ngRoute', 'uiGmapgoogle-maps', 'ngCookies', 'ngFlash'])
     .config(function($routeProvider, $locationProvider){
         $locationProvider.html5Mode(true);
         $routeProvider
