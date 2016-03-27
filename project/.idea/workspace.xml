@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e352a33-31e5-4351-8433-1d5f2ca59b38" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/dist/angular-flash.css" afterPath="$PROJECT_DIR$/app/assets/javascripts/dist/angular-flash.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/swlls/app.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/swlls/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/swlls/views/AddEvent.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/swlls/views/AddEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/swlls/views/Delete.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/swlls/views/Delete.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/swlls/views/NewCreator.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/swlls/views/NewCreator.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/swlls/views/pagination.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/swlls/views/pagination.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/swll.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/swll.scss" />
     </list>
     <ignored path="project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,11 +34,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewCreator.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NewCreator.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/swlls/views/NewCreator.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7405303">
-              <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+            <state vertical-scroll-proportion="-5.923077">
+              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newCreatorViewModel.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/swlls/viewModels/newCreatorViewModel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -114,12 +117,12 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/swlls/viewModels/navigationViewModel.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/swlls/viewModels/addEventViewModel.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/swlls/viewModels/deleteViewModel.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/swlls/viewModels/newCreatorViewModel.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/dist/angular-flash.css" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/swll.scss" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/swlls/views/Delete.html" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/swlls/views/AddEvent.html" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/swlls/views/NewCreator.html" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/swlls/viewModels/newCreatorViewModel.js" />
       </list>
     </option>
   </component>
@@ -593,7 +596,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="31" y="13" width="1287" height="688" extended-state="0" />
+    <frame x="31" y="13" width="1287" height="688" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29258353" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -931,14 +934,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/swlls/viewModels/newCreatorViewModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06137184">
-          <caret line="2" column="79" selection-start-line="2" selection-start-column="79" selection-end-line="2" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/swlls/viewModels/navigationViewModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5090253">
@@ -1009,8 +1004,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/swlls/views/NewCreator.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7405303">
-          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+        <state vertical-scroll-proportion="-5.923077">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/swlls/viewModels/newCreatorViewModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
           <folding />
         </state>
       </provider>
