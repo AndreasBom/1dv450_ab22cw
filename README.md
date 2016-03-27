@@ -96,7 +96,9 @@ Det ligger 8 ställen inlagda när applikationen startas upp. Dessa är märkta 
 Gå till addressen http://localhost:3000  för att testa applikationen.    
 
 För att lägga till ett ställe måste du först skapa en användare. Det är endast den användaren som skapade ett ställe, som kan radera stället. Autentieringen sker m.h.a Basic HTTP. I chrome sparas dessa uppgifterna tillfälligt i datorn, så därför behöver man inte logga in varje gång.    
-
+     
+     
+Namngivningen på vissa filer är lite dålig. Jag hade en annan ide om vad jag skulle göra och då tänkte jag döpa applikationen till Swlls. Men jag ändrade tema och därför heter vissa filer och kataloger Swlls. Javascriptfilerna hittas i app/assets/javascripts
       
       
     
