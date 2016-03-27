@@ -91,7 +91,7 @@ Kör igång servern genom att skriva:
 Applikationen är en karta som visar ölställen. Man kan sätta betyg på ställerna, och man kan skriva en beskrivning. Det går också lägga till taggar. Ölställerna visas både i en lista och på en karta.    
 
      
-Det ligger 8 ställen inlagda när applikationen startas upp. Dessa är märkta med en asterix i slutet på namnet. Jag hade problem att skapa dessa i seedfilen. De har ingen 'creator' associaerad till sig. Jag har märkt att det kan bli problem med databasen om man raderar dessa, så gör inte det. Radera sådana som du själv lägger till.    
+Det ligger 8 ställen inlagda när applikationen startas upp. Dessa är märkta med en asterix i slutet på namnet. Jag hade problem att skapa dessa i seedfilen. De har ingen 'creator' associaerad till sig, och addressen syns inte i listan. Jag har märkt att det kan bli problem med databasen om man raderar dessa, så gör inte det. Radera sådana som du själv lägger till.    
      
 Gå till addressen http://localhost:3000  för att testa applikationen.    
 
