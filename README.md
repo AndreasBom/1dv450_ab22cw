@@ -60,8 +60,46 @@ Kör igång servern genom att skriva:
 * rails s -b 0.0.0.0     
     
 Dokumentation hittas i katalogen Dokummentation
+    
+    
+     
+###Uppgift 3   
+#####Installation
+* Ladda ner repot (exempelvis med git clone https://github.com/AndreasBom/1dv450_ab22cw.git)    
+* Använd en kommandotolk som har ssh ex. git bash, Cygwin etc.
+I kommandotolken, skriv:   
+* cd 1dv450   
+* cd project    
+    
+kör följande kommandon för att installera en vagrantmaskin, (kör ett kommando i taget. Om det inte funkar kan du testa att först köra kommandot | vagrant provision |)):
+* vagrant up
+* vagrant ssh 
+* cd /vagrant
+* cd project   
+   
+Nu bör du vara inne i katalogen där appen ligger.    
+Skriv:    
+* bundle install    
+* rake db:setup
+   
+Kör igång servern genom att skriva:    
+* rails s -b 0.0.0.0     
+    
+    
+    
+####Testkör applikationen
+Applikationen är en karta som visar ölställen. Man kan sätta betyg på ställerna, och man kan skriva en beskrivning. Det går också lägga till taggar. Ölställerna visas både i en lista och på en karta.    
 
+     
+Det ligger 8 ställen inlagda när applikationen startas upp. Dessa är märkta med en asterix i slutet på namnet. Jag hade problem att skapa dessa i seedfilen. De har ingen 'creator' associaerad till sig. Jag har märkt att det kan bli problem med databasen om man raderar dessa, så gör inte det. Radera sådana som du själv lägger till.    
+     
+Gå till addressen http://localhost:3000  för att testa applikationen.    
 
+För att lägga till ett ställe måste du först skapa en användare. Det är endast den användaren som skapade ett ställe, som kan radera stället. Autentieringen sker m.h.a Basic HTTP. I chrome sparas dessa uppgifterna tillfälligt i datorn, så därför behöver man inte logga in varje gång.    
+
+      
+      
+    
 
 
 
