@@ -26,6 +26,7 @@ Kör i kommandotolken:
      Välj 'create a New Workspace'
      Fyll i workspace name till något valfritt
      I 'Clone from Git or Mercurial URL' klistrar du in https://github.com/AndreasBom/webbramverk_deployed
+     Markera att det är ett Ruby-projekt 
      Tryck 'Create Workspace'
      
      skriv följande i terminalfönstret i cloud9:
@@ -64,6 +65,16 @@ Dokumentation hittas i katalogen Dokummentation
     
      
 ###Uppgift 3   
+Projektet ligger uppe på cloud9: https://webbramverk-tre-andreasbom.c9users.io/ 
+Efter ett tag stängs servern ner (eftersom jag inte har ett betalkonto). Då får man gå in och köra igång servern igen, Jag vet inte om andra kan göra detta. Projektet är public, så eventuellt går det att du loggar in och sedan kör igång servern med  rails s -p $PORT -b $IP
+https://c9.io/andreasbom/webbramverk_tre
+
+Funkar inte detta får du köra igång projektet själv. Instruktioner finns under uppgift 1 högre upp i detta dokument.    
+    
+
+
+Vill man hellre köra en lokal installation görs följande:    
+
 #####Installation
 * Ladda ner repot (exempelvis med git clone https://github.com/AndreasBom/1dv450_ab22cw.git)    
 * Använd en kommandotolk som har ssh ex. git bash, Cygwin etc.
