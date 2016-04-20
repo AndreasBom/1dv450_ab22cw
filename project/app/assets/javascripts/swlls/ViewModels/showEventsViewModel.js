@@ -64,7 +64,7 @@
         var getAllEvents = function(){
             $http({
                 method: 'GET',
-                url: "http://localhost:3000/api/v1/events/show/all",
+                url: "/api/v1/events/show/all",
                 headers: {
                     'X-Api-Key': "aaaaaa"
                 },
@@ -85,7 +85,7 @@
         var getEventsPagewise = function(offset, limit){
             $http({
                 method: 'GET',
-                url: "http://localhost:3000/api/v1/events/show/all?offset=" + offset + "&limit=" + limit,
+                url: "/api/v1/events/show/all?offset=" + offset + "&limit=" + limit,
                 headers: {
                     'X-Api-Key': "aaaaaa"
                 },

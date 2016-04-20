@@ -55,7 +55,7 @@
             }
         };
 
-        
+
         $scope.saveCreator = function(){
 
             //If validation fails
@@ -72,7 +72,7 @@
 
             $http({
                 method: 'POST',
-                url: "http://localhost:3000/api/v1/creators/create/",
+                url: "/api/v1/creators/create/",
                 headers: {
                     'X-Api-Key': "aaaaaa"
                 },

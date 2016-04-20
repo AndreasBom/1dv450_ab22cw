@@ -82,7 +82,7 @@
         var getAllLocations = function(){
             $http({
                 method: 'GET',
-                url: "http://localhost:3000/api/v1/positions/show/all",
+                url: "/api/v1/positions/show/all",
                 headers: {
                     'X-Api-Key': "aaaaaa"
                 },
@@ -101,7 +101,7 @@
         var getEvent = function(id, callback){
             $http({
                 method: 'GET',
-                url: "http://localhost:3000/api/v1/events/show/" + id,
+                url: "/api/v1/events/show/" + id,
                 headers: {
                     'X-Api-Key': "aaaaaa"
                 },

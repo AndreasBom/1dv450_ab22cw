@@ -27,12 +27,12 @@
 
 
 //= require swlls/app.js
-//= require swlls/viewModels/showGMapsViewModel.js
-//= require swlls/viewModels/showEventsViewModel.js
-//= require swlls/viewModels/deleteViewModel.js
-//= require swlls/viewModels/addEventViewModel.js
-//= require swlls/viewModels/newCreatorViewModel.js
-//= require swlls/viewModels/navigationViewModel.js
+//= require swlls/ViewModels/showGMapsViewModel.js
+//= require swlls/ViewModels/showEventsViewModel.js
+//= require swlls/ViewModels/deleteViewModel.js
+//= require swlls/ViewModels/addEventViewModel.js
+//= require swlls/ViewModels/newCreatorViewModel.js
+//= require swlls/ViewModels/navigationViewModel.js
 
 
 //= require_tree .

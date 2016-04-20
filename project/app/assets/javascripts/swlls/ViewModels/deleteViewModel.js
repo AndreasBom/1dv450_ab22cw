@@ -18,7 +18,7 @@
             $rootScope.loading = true;
             $http({
                 method: 'DELETE',
-                url: "http://localhost:3000/api/v1/events/delete/" + eventId,
+                url: "/api/v1/events/delete/" + eventId,
                 headers: {
                     'X-Api-Key': "aaaaaa"
                 }
@@ -43,7 +43,7 @@
 
         $http({
             method: 'GET',
-            url: "http://localhost:3000/api/v1/creators/show/" + creatorIdOfEvent,
+            url: "/api/v1/creators/show/" + creatorIdOfEvent,
             headers: {
                 'X-Api-Key': "aaaaaa"
             },

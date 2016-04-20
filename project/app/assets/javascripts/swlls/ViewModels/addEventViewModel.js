@@ -35,7 +35,7 @@
 
             $http({
                 method: 'POST',
-                url: "http://localhost:3000/api/v1/events/create/",
+                url: "/api/v1/events/create/",
                 headers: {
                     'X-Api-Key': "aaaaaa"
                 },
